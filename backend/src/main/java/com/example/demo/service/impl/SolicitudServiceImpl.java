@@ -97,7 +97,7 @@ public class SolicitudServiceImpl implements SolicitudService {
 
         HistorialEstadoSolicitud historial = HistorialEstadoSolicitud.builder()
                 .solicitud(guardada)
-                .estadoAnterior(null)
+                .estadoAnterior("NINGUNO")
                 .estadoNuevo(Solicitud.EstadoSolicitud.PUBLICADA.name())
                 .fechaCambio(LocalDateTime.now())
                 .build();

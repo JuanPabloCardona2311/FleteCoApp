@@ -39,7 +39,7 @@ public class HistorialEstadoSolicitud {
     @ToString.Exclude
     private Solicitud solicitud;
 
-    @Column(name = "estado_anterior", nullable = false, length = 50)
+    @Column(name = "estado_anterior", length = 50)
     private String estadoAnterior;
 
     @Column(name = "estado_nuevo", nullable = false, length = 50)
