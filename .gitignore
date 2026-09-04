@@ -8,6 +8,8 @@
 .env.*
 *.env
 **/.env
+!.env.example
+!**/.env.example
 
 # Recovery / backups
 _recover/
