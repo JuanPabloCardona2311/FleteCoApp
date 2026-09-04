@@ -1,16 +1,68 @@
-# React + Vite
+# Frontend de FleteCo
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicación web desarrollada con React y Vite para conectar despachadores y conductores de la plataforma FleteCo.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js instalado.
+- Backend de FleteCo ejecutándose en `http://localhost:8080`.
 
-## React Compiler
+## Instalación
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Desde esta carpeta, instala las dependencias:
 
-## Expanding the Oxlint configuration
+```powershell
+npm.cmd install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Ejecutar el frontend
+
+Inicia el servidor de desarrollo con:
+
+```powershell
+npm.cmd run dev
+```
+
+Después abre la dirección que muestra Vite, normalmente:
+
+```text
+http://localhost:5173
+```
+
+## Configuración de la API
+
+La URL del backend se configura en el archivo `.env`:
+
+```env
+VITE_API_URL=http://localhost:8080
+```
+
+Cuando el backend esté desplegado, reemplaza esa dirección por su URL pública y vuelve a iniciar o construir el frontend.
+
+## Rutas actuales
+
+- `/`: inicio de sesión.
+- `/registro`: registro de usuarios como conductor o despachador.
+
+## Crear versión de producción
+
+```powershell
+npm.cmd run build
+```
+
+Para revisar localmente la versión construida:
+
+```powershell
+npm.cmd run preview
+```
+
+## Estructura principal
+
+```text
+src/
+├── api/          Cliente centralizado de Axios.
+├── components/   Componentes reutilizables.
+├── pages/        Pantallas de la aplicación.
+├── App.jsx       Configuración de rutas.
+└── main.jsx      Punto de entrada y BrowserRouter.
+```
