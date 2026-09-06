@@ -1,0 +1,39 @@
+:root {
+	--ink: #17261f;
+	--paper: #fbf8f0;
+	--primary: #2b5b3e;
+	--primary-hover: #234a32;
+	--accent-gold: #d9a441;
+	--error: #8b2929;
+	--muted: #5b675e;
+	--font-display: "Fraunces", Georgia, serif;
+	--font-body: "Inter", Arial, sans-serif;
+}
+
+.page { min-height: 100vh; display: grid; place-items: center; padding: 32px 16px; background: linear-gradient(135deg, #e9eee8, #c9d9ce); }
+.register-card { width: min(100%, 620px); padding: 40px; background: var(--paper); border: 1px solid #cbd5ca; box-shadow: 0 20px 50px rgb(31 52 38 / 14%); }
+h1 { margin: 0; font: 700 clamp(2rem, 6vw, 3.5rem) var(--font-display); line-height: 1.05; color: var(--ink); }
+.subtitle { margin: 16px 0 28px; color: var(--muted); font: 1rem var(--font-body); }
+form { display: grid; gap: 18px; }
+label, legend { color: var(--ink); font: 600 0.85rem var(--font-body); }
+input, select { width: 100%; margin-top: 7px; padding: 12px; border: 1px solid #aebcaf; background: white; color: var(--ink); font: 1rem var(--font-body); }
+input:focus, select:focus { outline: 2px solid var(--accent-gold); outline-offset: 1px; }
+.two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+fieldset { display: flex; gap: 18px; border: 1px solid #cbd5ca; padding: 16px; }
+.role-option { display: flex; align-items: center; gap: 7px; font: 400 0.85rem var(--font-body); }
+.role-option input { width: auto; margin: 0; }
+button { border: 0; padding: 14px 18px; background: var(--primary); color: white; cursor: pointer; font: 700 0.95rem var(--font-body); border-radius: 6px; transition: background 0.15s ease; }
+button:hover:not(:disabled) { background: var(--primary-hover); }
+button:disabled { cursor: wait; opacity: 0.65; }
+.success, .error { margin: 0; padding: 12px; font: 0.95rem var(--font-body); }
+.success { background: #dceee0; color: #215b30; }
+.error { background: #f7dddd; color: var(--error); }
+.form-footer { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 24px; color: var(--muted); font: 0.9rem var(--font-body); }
+.link-button { padding: 0; background: transparent; color: var(--primary); text-decoration: underline; font: inherit; }
+.link-button:hover { background: transparent; color: var(--primary-hover); }
+.logo { display: inline-flex; align-items: baseline; gap: 2px; margin-bottom: 20px; font-family: var(--font-display); }
+.logo__flete { font-size: 1.4rem; font-weight: 700; color: var(--ink); letter-spacing: 0.01em; }
+.logo__co { font-size: 1.4rem; font-weight: 700; color: var(--accent-gold); letter-spacing: 0.03em; }
+.logo::after { content: ""; }
+.role-option:has(input:checked) { color: var(--accent-gold); font-weight: 700; }
+@media (max-width: 560px) { .register-card { padding: 26px 20px; } .two-columns { grid-template-columns: 1fr; } fieldset { flex-direction: column; } }
